@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="data">
+        <h1>Movie Watch List</h1>
+        <input
+          class="movie-input"
+          type="text"
+          placeholder="Enter your Movie Name"
+        />
+        <ul></ul>
+      </div>
+    </main>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      var input = document.querySelector('input');
+      var ul = document.querySelector('ul');
+
+      var allMovies = [];
+
+      input.addEventListener('keyup', (event) => {
+        if (event.keyCode === 13) {
+          allMovies.push({
+            name: event.target.value,
+            watched: true,
+          });
+
+          event.target.value = '';
+          createUI();
+        }
+      });
+
+      function change(event) {
+        var id = event.target.id;
+        allMovies[id].watched = !allMovies[id].watched;
+        createUI(allMovies, ul);
+      }
+
+      function createUI() {
+        var allData = allMovies.map((each, i) => {
+          return (
+            <li className="list">
+              <input type="checkbox" className="checkbox" />
+              <h3>{each.name}</h3>
+              <p id={i} onClick={change}>
+                {each.watched ? 'To watch' : 'watched'}
+              </p>
+            </li>
+          );
+        });
+        ReactDOM.render(allData, ul);
+        console.log(allData);
+      }
+    </script>
+  </body>
+</html>
