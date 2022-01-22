@@ -1,0 +1,34 @@
+body {
+  background-color: rgba(91, 133, 133, 0.472);
+}
+
+h1 {
+  text-align: center;
+}
+
+.data {
+  width: 30%;
+  border: 1px solid;
+  margin: auto;
+  padding: 1rem;
+  background-color: rgba(16, 149, 158, 0.342);
+}
+input {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding: 0.6rem 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.list {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+p {
+  margin-left: 2rem;
+  color: red;
+}
