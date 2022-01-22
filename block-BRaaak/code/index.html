@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article-Card</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="root"></div>
+    </main>
+    <script type="text/babel">
+      var root = document.querySelector('.root');
+
+      let Card = (props) => {
+        return (
+          <>
+            <div className="article">
+              {' '}
+              <img src={props.imgURL} alt="img" />
+              <div className="text">
+                <h1>City Light in New York</h1>
+                <h2>The city that never sleeps</h2>
+
+                <p>
+                  New York , is largest city in the U.S., is an archetectural
+                  marvel with plenty of historic monuments.
+                </p>
+
+                <h4>
+                  o 6 mins ago <span>36 comments</span>
+                </h4>
+              </div>
+            </div>
+          </>
+        );
+      };
+
+      let img = (
+        <>
+          <div className="main-div">
+            <Card imgURL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfelZwLFrJDTbzF3rWZW5E8W2a53wDgfe4YA&usqp=CAU" />
+
+            <Card imgURL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfelZwLFrJDTbzF3rWZW5E8W2a53wDgfe4YA&usqp=CAU" />
+
+            <Card imgURL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfelZwLFrJDTbzF3rWZW5E8W2a53wDgfe4YA&usqp=CAU" />
+          </div>
+        </>
+      );
+
+      ReactDOM.render(img, root);
+    </script>
+  </body>
+</html>
